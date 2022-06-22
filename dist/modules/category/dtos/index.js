@@ -16,5 +16,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./category.response"), exports);
 __exportStar(require("./create-category.dto"), exports);
+__exportStar(require("./update-category.dto"), exports);
 __exportStar(require("./get-category.dto"), exports);
-__exportStar(require("./list-categories.searchprops.dto"), exports);
+__exportStar(require("./delete-category.dto"), exports);
+__exportStar(require("./list-categories.search-props.dto"), exports);

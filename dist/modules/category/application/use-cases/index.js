@@ -15,5 +15,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./create-category.use-case"), exports);
+__exportStar(require("./delete-category.use-case"), exports);
 __exportStar(require("./get-category.use-case"), exports);
 __exportStar(require("./list-categories.use-case"), exports);
+__exportStar(require("./update-category.use-case"), exports);
