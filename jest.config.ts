@@ -12,12 +12,14 @@ export default {
   collectCoverage: true,
 
   // The root directory that Jest should scan for tests and modules within
-  rootDir: './tests',
+  rootDir: '.',
     
 
     // An array of glob patterns indicating a set of files for which coverage information should be collected
-  //   collectCoverageFrom: [
-  //     '<rootDir>/tests/**/*.ts',
+    // collectCoverageFrom: [
+    //   '<rootDir>/../tests/**/*.spec.ts'
+    // ],
+
   //     '**/tests/**',
   //     '<rootDir>/tests/**/*.spec.ts',
   //     '<rootDir>/**/*.spec.ts',

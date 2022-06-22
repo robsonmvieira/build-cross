@@ -1,7 +1,7 @@
 import {CategoryInMemoryRepository} from '../../../../../src/modules/category/infra/repository/category-in-memory.repository'
 import { CreateCategoryUseCase, ListCategoriesUseCase } from '../../../../../src/modules/category/application/use-cases'
 import { CategoryMapper } from '../../../../../src/modules/category/infra/database/category.mapper'
-import { GetCategoryDTO } from '../../../../../src/modules/category/dtos';
+import { GetCategoryDTO, ListCategoriesInputProps } from '../../../../../src/modules/category/dtos';
 describe('List Categories UseCase Unit Tests', () => {
   let repo: CategoryInMemoryRepository
   let useCase: ListCategoriesUseCase
@@ -16,22 +16,40 @@ describe('List Categories UseCase Unit Tests', () => {
   })
   
   it('should list categories using find method ', async () => {
-    jest.spyOn(repo, 'findById')
+    // jest.spyOn(repo, 'findById')
     const mapperSpyOn = jest.spyOn(mapper, 'fromOrmToOutput')
     const inputCreateDTO = {
       name: 'test',
       isActive: true,
     }
+
+    const arrange = [
+      {name: 'Ferros', isActive: false, description: 'categoria de ferros'},
+      {name: 'Hidraulica', isActive: true, description: 'Canos e vedações'},
+      {name: 'Ferramentas', isActive: false, description: 'Martelos, chaves'},
+      {name: 'Piso', isActive: true, description: 'Porcelanatos'},
+      {name: 'Eletrica', isActive: true, description: 'Parte Eletrica'},
+    ]
+    for (const category of arrange) {
+      await createUseCase.execute(category)
     
-    await createUseCase.execute(inputCreateDTO)
-    const inputFindById: GetCategoryDTO = {
-      id: repo.data[0].id
+    }
+    let inputFindById: ListCategoriesInputProps = {
+      page: 1,
+      per_page: 5,
+      sort: 'name',
+      sort_dir: 'asc',
+      filter: null
     }
 
-    const output = await useCase.execute(inputFindById)
-    expect(3 + 3).toBe(6)
-    // expect(mapperSpyOn).toHaveBeenCalledTimes(2)
-
+    
+    let output = await useCase.execute(inputFindById)
+    expect(mapperSpyOn).toHaveBeenCalled()
+    expect(output.items.length).toBe(5)
+   
+    inputFindById = {...inputFindById, filter: 'ferramentas'}
+    output = await useCase.execute(inputFindById)
+    expect(output.items.length).toBe(1)
   });
  
 });
