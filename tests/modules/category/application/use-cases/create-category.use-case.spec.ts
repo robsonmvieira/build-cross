@@ -1,5 +1,5 @@
 import {CategoryInMemoryRepository} from '../../../../../src/modules/category/infra/repository/category-in-memory.repository'
-import { CreateCategoryUseCase } from '../../../../../src/modules/category/application/use-cases/create-category.use-case'
+import { CreateCategoryUseCase } from '../../../../../src/modules/category/application/use-cases'
 import { CategoryMapper } from '../../../../../src/modules/category/infra/database/category.mapper'
 describe('Create Category UseCase Unit Tests', () => {
   let repo: CategoryInMemoryRepository
