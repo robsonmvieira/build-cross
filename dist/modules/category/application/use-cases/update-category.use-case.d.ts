@@ -1,13 +1,11 @@
-import { CategoryResponse, UpdateCategoryDTO } from "../../dtos";
-import { CategoryMapper } from "../../infra/database/category.mapper";
+import { UpdateCategoryDTO } from "../../dtos";
 import CategoryRepository from "../../infra/repository/i-category.repository";
 import { UseCase as DefaultUseCase } from '../../../../core/application/use-cases/i-use-case';
 export declare namespace UpdateCategoryUseCase {
-    class UseCase implements DefaultUseCase<UpdateCategoryDTO, CategoryResponse> {
+    class UseCase implements DefaultUseCase<UpdateCategoryDTO, void> {
         private readonly categoryRepository;
-        private readonly categoryMapper;
-        constructor(categoryRepository: CategoryRepository.ICategoryRepository, categoryMapper: CategoryMapper);
-        execute(props: UpdateCategoryDTO): Promise<CategoryResponse>;
+        constructor(categoryRepository: CategoryRepository.ICategoryRepository);
+        execute(props: UpdateCategoryDTO): Promise<void>;
     }
 }
 export default UpdateCategoryUseCase;
