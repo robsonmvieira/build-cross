@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CategoryValidatorFactory = exports.CategoryValidator = exports.CategoryModelRules = void 0;
-const class_validator_1 = require("../../../core/validators/class-validator");
+const class_validator_1 = require("#core/validators/class-validator");
 const class_validator_2 = require("class-validator");
 class CategoryModelRules {
     constructor(data) {

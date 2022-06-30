@@ -1,4 +1,4 @@
-import { SortDirection } from "../../../core/repository/base.repository";
+import { SortDirection } from "#core/repository/base.repository";
 export declare type ListPaginationResponse<Items> = {
     items: Items;
     total: number;

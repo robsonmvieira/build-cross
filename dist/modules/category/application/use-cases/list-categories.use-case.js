@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ListCategoriesUseCase = void 0;
-const i_category_repository_1 = require("../../infra/repository/i-category.repository");
+const i_category_repository_1 = require("#modules/category/infra/repository/i-category.repository");
 var ListCategoriesUseCase;
 (function (ListCategoriesUseCase) {
     class UseCase {

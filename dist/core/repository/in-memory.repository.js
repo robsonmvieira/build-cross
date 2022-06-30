@@ -37,7 +37,7 @@ exports.InMemoryRepository = InMemoryRepository;
 class InMemorySearchableRepository extends InMemoryRepository {
     constructor() {
         super(...arguments);
-        this.searchbableFields = [];
+        this.searchableFields = [];
     }
     async search(props) {
         const itemsFiltered = await this.applyFilter(this.data, props.filter);
@@ -54,7 +54,7 @@ class InMemorySearchableRepository extends InMemoryRepository {
         });
     }
     async applySort(data, sort, sort_dir) {
-        if (!sort || !this.searchbableFields.includes(sort))
+        if (!sort || !this.searchableFields.includes(sort))
             return data;
         return [...data].sort((a, b) => {
             if (a.value[sort] < b.value[sort]) {
@@ -70,7 +70,6 @@ class InMemorySearchableRepository extends InMemoryRepository {
         const start = (page - 1) * per_page;
         const limit = start + per_page;
         return data.slice(start, limit);
-        return;
     }
 }
 exports.InMemorySearchableRepository = InMemorySearchableRepository;

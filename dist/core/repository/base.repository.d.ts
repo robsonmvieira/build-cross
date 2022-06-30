@@ -63,6 +63,6 @@ export declare class SearchResult<Props, E extends Entity<Props>, Filter = strin
     };
 }
 export interface ISearchableRepository<Props, T extends Entity<Props>, SearchInput = SearchParams, SearchOutput = SearchResult<Props, T>> extends IRepository<Props, T> {
-    searchbableFields: string[];
+    searchableFields: string[];
     search(props: SearchParams): Promise<SearchOutput>;
 }

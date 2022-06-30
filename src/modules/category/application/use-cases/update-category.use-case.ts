@@ -1,8 +1,8 @@
-import { UpdateCategoryDTO } from "../../dtos";
-import { Category } from "../../entities";
-import CategoryRepository  from "../../infra/repository/i-category.repository";
-import  { UseCase as DefaultUseCase}  from '../../../../core/application/use-cases/i-use-case'
-import { UniqueID } from "../../../../core/value-objects/ID.vo";
+import { UpdateCategoryDTO } from "#modules/category/dtos";
+import { Category } from "#modules/category/entities";
+import CategoryRepository  from "#modules/category/infra/repository/i-category.repository";
+import  { UseCase as DefaultUseCase}  from '#core/application/use-cases/i-use-case'
+import { UniqueID } from "#core/value-objects/ID.vo";
 
 
 export namespace UpdateCategoryUseCase {

@@ -10,7 +10,7 @@ export declare abstract class InMemoryRepository<Props, T extends Entity<Props>>
     protected get(id: string): Promise<T>;
 }
 export declare abstract class InMemorySearchableRepository<Props, T extends Entity<Props>, SearchParams> extends InMemoryRepository<Props, T> implements ISearchableRepository<Props, T, SearchParams> {
-    searchbableFields: string[];
+    searchableFields: string[];
     search(props: SP): Promise<SR<Props, T>>;
     protected abstract applyFilter(data: T[], filter: string | null): Promise<T[]>;
     protected applySort(data: T[], sort: string | null, sort_dir: string | null): Promise<T[]>;

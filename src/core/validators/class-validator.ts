@@ -1,5 +1,5 @@
 import { validateSync } from 'class-validator';
-import { FieldsErrors, IValidatorFields } from "./validatior-fields.contract";
+import { FieldsErrors, IValidatorFields } from "./validator-fields.contract";
 
 export abstract class ClassValidator<T> implements IValidatorFields<T> {
   errors: FieldsErrors = null;

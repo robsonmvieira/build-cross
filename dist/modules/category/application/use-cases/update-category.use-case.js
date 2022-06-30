@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateCategoryUseCase = void 0;
-const entities_1 = require("../../entities");
-const ID_vo_1 = require("../../../../core/value-objects/ID.vo");
+const entities_1 = require("#modules/category/entities");
+const ID_vo_1 = require("#core/value-objects/ID.vo");
 var UpdateCategoryUseCase;
 (function (UpdateCategoryUseCase) {
     class UseCase {

@@ -48,10 +48,8 @@ describe('Get Category UseCase Unit Tests', () => {
     const inputFindById: GetCategoryDTO = {
       id: 'invalid-id'
     }
-    expect(
-      () => useCase.execute(inputFindById)).rejects.toThrow(
-        new NotFoundException('Entity not found')
-        )
+    await expect(() => useCase.execute(inputFindById)).rejects.toThrow(
+        new NotFoundException('Entity not found'))
 
   });
 });

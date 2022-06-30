@@ -1,5 +1,5 @@
-import { ClassValidator } from "../../../core/validators/class-validator";
-import { CategoryProps } from "../entities";
+import { ClassValidator } from "#core/validators/class-validator";
+import { CategoryProps } from "#modules/category/entities";
 
 import { IsBoolean, IsNotEmpty, IsOptional, IsString, MaxLength } from "class-validator"
 

@@ -1,6 +1,6 @@
 import {  DeleteCategoryDTO } from "../../dtos";
-import CategoryRepository  from "../../infra/repository/i-category.repository";
-import { UseCase as DefaultUseCase } from '../../../../core/application/use-cases'
+import CategoryRepository  from "#modules/category/infra/repository/i-category.repository";
+import { UseCase as DefaultUseCase } from '#core/application/use-cases'
 
 
 export namespace DeleteCategoryUseCase {

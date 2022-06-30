@@ -1,5 +1,5 @@
-import { InMemorySearchableRepository } from "../../../../core/repository/in-memory.repository";
-import { CategoryProps, Category } from "../../entities";
+import { InMemorySearchableRepository } from "#core/repository/in-memory.repository";
+import { CategoryProps, Category } from "#modules/category/entities";
 import  CategoryRepository  from "./i-category.repository";
 
 export class CategoryInMemoryRepository 

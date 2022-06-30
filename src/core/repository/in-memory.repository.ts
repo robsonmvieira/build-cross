@@ -38,7 +38,7 @@ export abstract class InMemoryRepository<Props, T extends Entity<Props>> impleme
 export abstract class InMemorySearchableRepository<Props, T extends Entity<Props>, SearchParams>
   extends InMemoryRepository<Props, T>
   implements ISearchableRepository<Props, T, SearchParams> {
-    searchbableFields: string[] = []
+    searchableFields: string[] = []
   async search(props: SP): Promise<SR<Props, T>> {
      const itemsFiltered =  await this.applyFilter(this.data, props.filter)
      const itemsSorted = await this.applySort(itemsFiltered, props.sort, props.sort_dir)
@@ -57,7 +57,7 @@ export abstract class InMemorySearchableRepository<Props, T extends Entity<Props
 
 
   protected async applySort(data: T[], sort: string | null, sort_dir: string | null ): Promise<T[]> {
-    if (!sort || !this.searchbableFields.includes(sort)) return data;
+    if (!sort || !this.searchableFields.includes(sort)) return data;
    
     return  [...data].sort((a, b) => {
       if (a.value[sort] < b.value[sort]) {
@@ -74,6 +74,5 @@ export abstract class InMemorySearchableRepository<Props, T extends Entity<Props
     const start = (page - 1) * per_page;
     const limit = start + per_page;
     return data.slice(start, limit);
-    return
    }
 }

@@ -1,9 +1,8 @@
-import { CategoryResponse } from "../../dtos";
-import { CategoryMapper } from "../../infra/database/category.mapper";
-import CategoryRepository  from "../../infra/repository/i-category.repository";
-import { ListCategoriesInputProps } from "../../dtos";
-import { ListPaginationResponse } from "../../../../core/application/dto";
-import  { UseCase as DefaultUseCase}  from '../../../../core/application/use-cases'
+import { CategoryResponse,ListCategoriesInputProps  } from "../../dtos";
+import { CategoryMapper } from "#modules/category/infra/database/category.mapper";
+import CategoryRepository  from "#modules/category/infra/repository/i-category.repository";
+import { ListPaginationResponse } from "#core/application/dto";
+import  { UseCase as DefaultUseCase}  from '#core/application/use-cases'
 
 
 export namespace ListCategoriesUseCase {
