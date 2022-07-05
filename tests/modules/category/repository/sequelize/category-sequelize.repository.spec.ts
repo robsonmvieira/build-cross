@@ -28,16 +28,19 @@ describe('Category Sequelize Repository Integration Test', () => {
       description: 'Some description'
     }).getResult()
     await repository.create(entity)
-    expect(2+2).toBe(4)
     const output = await CategorySequelizeModel.findByPk(entity.id)
     expect(output?.id).toBe(entity.id)
   });
 
   it('should throw NotFoundException if category not found', async () => {
-    const r = await CategorySequelizeModel.findByPk('invalid id')
-    console.log('valor de R => ', r)
-    await expect(() => CategorySequelizeModel.findByPk('invalid id')
-      ).rejects.toThrow(new NotFoundException('Entity not found'))
+
+    try {
+      fail()
+    } catch (error) {
+      await expect(() => repository.findById('invalid id')
+        ).rejects.toThrow(new NotFoundException('Entity not found'))
+    }
+      
   });
 
   it('should get a category by id', async () => {
